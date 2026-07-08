@@ -23,8 +23,8 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Gainr | Hyperlocal Marketplace & Digital Opportunity Platform" },
       { name: "description", content: "Gainr is an AI-powered hyperlocal marketplace developed by EmpowerNet Technologies Private Limited. Discover local services, freelance opportunities, rentals, surveys and customer verification." },
-      { property: "og:title", content: "Gainr | AI-Powered Hyperlocal Marketplace" },
-      { property: "og:description", content: "One platform. Endless opportunities. Discover local services, freelance work, rentals and more." },
+      { property: "og:title", content: "Gainr | Hyperlocal Marketplace & Digital Opportunity Platform" },
+      { property: "og:description", content: "Gainr is an AI-powered hyperlocal marketplace developed by EmpowerNet Technologies Private Limited. Discover local services, freelance opportunities, rentals, surveys and customer verification." },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
