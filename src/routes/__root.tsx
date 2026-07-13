@@ -7,10 +7,9 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
@@ -22,7 +21,10 @@ function NotFoundComponent() {
           The page you're looking for doesn't exist or has been moved.
         </p>
         <div className="mt-6">
-          <Link to="/" className="inline-flex items-center justify-center rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-brand-foreground hover:bg-brand/90">
+          <Link
+            to="/"
+            className="inline-flex items-center justify-center rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-brand-foreground hover:bg-brand/90"
+          >
             Go home
           </Link>
         </div>
@@ -34,9 +36,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -47,12 +46,18 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
-            onClick={() => { router.invalidate(); reset(); }}
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
             className="rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-brand-foreground hover:bg-brand/90"
           >
             Try again
           </button>
-          <a href="/" className="rounded-full border border-border bg-background px-5 py-2.5 text-sm font-medium hover:bg-accent">
+          <a
+            href="/"
+            className="rounded-full border border-border bg-background px-5 py-2.5 text-sm font-medium hover:bg-accent"
+          >
             Go home
           </a>
         </div>
@@ -67,45 +72,66 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Gainr | Hyperlocal Marketplace & Digital Opportunity Platform" },
-      { name: "description", content: "Gainr is an AI-powered hyperlocal marketplace developed by EmpowerNet Technologies Private Limited. Discover local services, freelance opportunities, rentals, surveys and customer verification." },
+      {
+        name: "description",
+        content:
+          "Gainr is an AI-powered hyperlocal marketplace developed by EmpowerNet Technologies Private Limited. Discover local services, freelance opportunities, rentals, surveys and customer verification.",
+      },
       { name: "author", content: "EmpowerNet Technologies Private Limited" },
       { property: "og:site_name", content: "Gainr" },
-      { property: "og:title", content: "Gainr | Hyperlocal Marketplace & Digital Opportunity Platform" },
-      { property: "og:description", content: "Gainr is an AI-powered hyperlocal marketplace developed by EmpowerNet Technologies Private Limited. Discover local services, freelance opportunities, rentals, surveys and customer verification." },
+      {
+        property: "og:title",
+        content: "Gainr | Hyperlocal Marketplace & Digital Opportunity Platform",
+      },
+      {
+        property: "og:description",
+        content:
+          "Gainr is an AI-powered hyperlocal marketplace developed by EmpowerNet Technologies Private Limited. Discover local services, freelance opportunities, rentals, surveys and customer verification.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Gainr | Hyperlocal Marketplace & Digital Opportunity Platform" },
-      { name: "twitter:description", content: "Gainr is an AI-powered hyperlocal marketplace developed by EmpowerNet Technologies Private Limited. Discover local services, freelance opportunities, rentals, surveys and customer verification." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/85c53969-420b-41a8-ad65-ff02d7ed6659/id-preview-597ca6b2--3c6f1e68-e915-4edd-8b68-4701e7946e78.lovable.app-1783512114536.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/85c53969-420b-41a8-ad65-ff02d7ed6659/id-preview-597ca6b2--3c6f1e68-e915-4edd-8b68-4701e7946e78.lovable.app-1783512114536.png" },
+      {
+        name: "twitter:title",
+        content: "Gainr | Hyperlocal Marketplace & Digital Opportunity Platform",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Gainr is an AI-powered hyperlocal marketplace developed by EmpowerNet Technologies Private Limited. Discover local services, freelance opportunities, rentals, surveys and customer verification.",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap",
+      },
     ],
-    scripts: [{
-      type: "application/ld+json",
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        name: "EmpowerNet Technologies Private Limited",
-        alternateName: "Gainr",
-        url: "/",
-        email: "connect@gainr.in",
-        telephone: "+91-93842-81014",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "B303, Sriram Vijaya Hyde Park, Peelamedu",
-          addressLocality: "Coimbatore",
-          postalCode: "641004",
-          addressRegion: "Tamil Nadu",
-          addressCountry: "IN",
-        },
-      }),
-    }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "EmpowerNet Technologies Private Limited",
+          alternateName: "Gainr",
+          url: "/",
+          email: "connect@gainr.in",
+          telephone: "+91-93842-81014",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "B303, Sriram Vijaya Hyde Park, Peelamedu",
+            addressLocality: "Coimbatore",
+            postalCode: "641004",
+            addressRegion: "Tamil Nadu",
+            addressCountry: "IN",
+          },
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,

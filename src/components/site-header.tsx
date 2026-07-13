@@ -56,8 +56,13 @@ export function SiteHeader() {
                 {n.label}
               </a>
             ))}
-            <Button asChild className="mt-2 rounded-full bg-brand text-brand-foreground hover:bg-brand/90">
-              <a href="/#contact" onClick={() => setOpen(false)}>Get in Touch</a>
+            <Button
+              asChild
+              className="mt-2 rounded-full bg-brand text-brand-foreground hover:bg-brand/90"
+            >
+              <a href="/#contact" onClick={() => setOpen(false)}>
+                Get in Touch
+              </a>
             </Button>
           </div>
         </div>
