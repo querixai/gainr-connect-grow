@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, Phone, MapPin } from "lucide-react";
-import logoAsset from "@/assets/gainr-logo.png.asset.json";
+import logoUrl from "@/assets/gainr-logo.png";
 
 export function SiteFooter() {
   return (
@@ -8,7 +8,7 @@ export function SiteFooter() {
       <div className="container-page py-14">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
-            <img src={logoAsset.url} alt="Gainr" className="h-9 w-auto" />
+            <img src={logoUrl} alt="Gainr" className="h-9 w-auto" />
             <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
               Gainr is a digital marketplace platform developed and owned by EmpowerNet Technologies
               Private Limited.
