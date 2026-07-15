@@ -72,3 +72,11 @@ curl -I https://empowernettechnologies.com/sitemap.xml
 
 Cloudflare keeps deployment history in the Worker dashboard. Use
 **Deployments** to roll back if a production deployment is unhealthy.
+
+## Production URL policy
+
+The Worker configuration disables both the default `workers.dev` address and
+version preview URLs. Production traffic is served only through the configured
+custom domains. Keep `workers_dev` and `preview_urls` set to `false` in
+`wrangler.jsonc`; otherwise a later Wrangler deployment can expose those URLs
+again.
