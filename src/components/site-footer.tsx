@@ -15,8 +15,8 @@ export function SiteFooter() {
             </p>
             <div className="mt-5 space-y-2 text-sm text-muted-foreground">
               <div className="flex items-start gap-2">
-                <MapPin className="mt-0.5 h-4 w-4 text-brand" /> No 1&1A, UR Nagar Extn, Anna Nagar
-                West, Chennai – 600050, Tamil Nadu
+                <MapPin className="mt-0.5 h-4 w-4 text-brand" /> B303, Sriram Vijaya Hyde Park,
+                Peelamedu, Coimbatore – 641004, Tamil Nadu
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-brand" />{" "}

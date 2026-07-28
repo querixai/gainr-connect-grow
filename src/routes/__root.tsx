@@ -123,9 +123,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           telephone: "+91-93842-81014",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "No 1&1A, UR Nagar Extn, Anna Nagar West",
-            addressLocality: "Chennai",
-            postalCode: "600050",
+            streetAddress: "B303, Sriram Vijaya Hyde Park, Peelamedu",
+            addressLocality: "Coimbatore",
+            postalCode: "641004",
             addressRegion: "Tamil Nadu",
             addressCountry: "IN",
           },
