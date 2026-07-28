@@ -444,7 +444,7 @@ function Company() {
     { label: "GSTIN", value: "33AAJCE3483F1ZP" },
     {
       label: "Registered Office",
-      value: "B303, Sriram Vijaya Hyde Park, Peelamedu, Coimbatore – 641004, Tamil Nadu, India",
+      value: "No 1&1A, UR Nagar Extn, Anna Nagar West, Chennai – 600050, Tamil Nadu, India",
     },
   ];
   return (
@@ -544,7 +544,7 @@ function Contact() {
                   Address
                 </span>
                 <span className="text-sm font-medium">
-                  B303, Sriram Vijaya Hyde Park, Peelamedu, Coimbatore – 641004
+                  No 1&1A, UR Nagar Extn, Anna Nagar West, Chennai – 600050
                 </span>
               </span>
             </div>
